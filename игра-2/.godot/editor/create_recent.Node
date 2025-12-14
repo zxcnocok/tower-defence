@@ -1,6 +1,6 @@
-PathFollow2D
 AnimatedSprite2D
 CollisionShape2D
+PathFollow2D
 CharacterBody2D
 TileMapLayer
 TileMap
@@ -12,4 +12,3 @@ LinkButton
 MenuButton
 ColorPickerButton
 CheckButton
-OptionButton
