@@ -1,0 +1,54 @@
+[gd_scene load_steps=8 format=3 uid="uid://2b04llmm68qk"]
+
+[ext_resource type="Texture2D" uid="uid://bhewsiaiupav" path="res://towers/1 Upgrade/4.png" id="1_hsksx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8s3ss"]
+radius = 42.0119
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8fief"]
+atlas = ExtResource("1_hsksx")
+region = Rect2(0, 0, 70, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28pfr"]
+atlas = ExtResource("1_hsksx")
+region = Rect2(70, 0, 70, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bf2k"]
+atlas = ExtResource("1_hsksx")
+region = Rect2(140, 0, 70, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j86gf"]
+atlas = ExtResource("1_hsksx")
+region = Rect2(210, 0, 70, 130)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hqv4p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8fief")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28pfr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8bf2k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j86gf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, 28)
+shape = SubResource("CircleShape2D_8s3ss")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_hqv4p")
+frame = 3
+frame_progress = 0.12439891
