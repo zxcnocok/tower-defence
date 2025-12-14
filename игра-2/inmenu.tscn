@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://8k2826ibhnh2"]
+
+[ext_resource type="Script" uid="uid://dkivna1ombhjw" path="res://inmenu.gd" id="1_tjrbd"]
+
+[node name="inmenu" type="CanvasLayer"]
+script = ExtResource("1_tjrbd")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+metadata/_edit_use_anchors_ = true
+
+[node name="Button" type="Button" parent="MarginContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_vertical = 8
+text = "В меню"
+
+[connection signal="pressed" from="MarginContainer/Button" to="." method="_on_button_pressed"]

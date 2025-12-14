@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://c486lqgcbahxo"]
+
+[ext_resource type="PackedScene" uid="uid://8k2826ibhnh2" path="res://inmenu.tscn" id="1_5v8ap"]
+
+[node name="options" type="CanvasLayer"]
+
+[node name="inmenu" parent="." instance=ExtResource("1_5v8ap")]

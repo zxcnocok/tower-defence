@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://b7hybobhc7ewx"]
+
+[ext_resource type="Script" uid="uid://dfr410wvfnk5" path="res://path_follow_2d.gd" id="1_v3v01"]
+[ext_resource type="Texture2D" uid="uid://bt2a7hph1wkpn" path="res://Sprite-0005.svg" id="2_jh3f2"]
+[ext_resource type="Script" uid="uid://168tg88toyrf" path="res://path_follow_2d_2.gd" id="3_8l8af"]
+[ext_resource type="Texture2D" uid="uid://b7n21t7f7u4co" path="res://slime1.svg" id="4_2pgbi"]
+
+[sub_resource type="Curve2D" id="Curve2D_8l8af"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 16, 0, 0, 0, 0, 0, 24, 0, 0, 0, 0, 0, 40, 0, 0, 0, 0, 0, 360, 0, 0, 0, 0, 0, 360, 88, 0, 0, 0, 0, 360, 320, 0, 0, 0, 0, 360, 488, 0, 0, 0, 0, 360, 512, 0, 0, 0, 0, 600, 512, 0, 0, 0, 0, 1192, 512, 0, 0, 0, 0, 1192, 192, 0, 0, 0, 0, 984, 192)
+}
+point_count = 12
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2pgbi"]
+size = Vector2(32, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oopom"]
+radius = 8.0
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Path2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_8l8af")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(16, 0)
+script = ExtResource("1_v3v01")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Path2D/PathFollow2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D"]
+shape = SubResource("RectangleShape2D_2pgbi")
+metadata/_edit_lock_ = true
+
+[node name="Sprite0005" type="Sprite2D" parent="Path2D/PathFollow2D"]
+position = Vector2(-1.9073486e-06, -1.9073486e-06)
+scale = Vector2(0.49999994, 0.49999994)
+texture = ExtResource("2_jh3f2")
+metadata/_edit_lock_ = true
+
+[node name="PathFollow2D2" type="PathFollow2D" parent="Path2D"]
+position = Vector2(16, 0)
+script = ExtResource("3_8l8af")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Path2D/PathFollow2D2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D2"]
+rotation = -6.2831855
+shape = SubResource("CircleShape2D_oopom")
+metadata/_edit_lock_ = true
+
+[node name="Slime1" type="Sprite2D" parent="Path2D/PathFollow2D2"]
+texture_filter = 3
+texture = ExtResource("4_2pgbi")
+metadata/_edit_lock_ = true

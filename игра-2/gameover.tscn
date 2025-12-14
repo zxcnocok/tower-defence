@@ -1,0 +1,30 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3rub6dfkjdqx"]
+
+[ext_resource type="Texture2D" uid="uid://bwk17hkwyarfg" path="res://sprite/Sprite-0004.svg" id="1_4nh4k"]
+
+[node name="Gameover" type="Node2D"]
+
+[node name="Sprite0004" type="Sprite2D" parent="."]
+position = Vector2(792, 496)
+scale = Vector2(24.75, 15.75)
+texture = ExtResource("1_4nh4k")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+offset_right = 1584.0
+offset_bottom = 1000.0
+size_flags_horizontal = 0
+metadata/_edit_lock_ = true
+
+[node name="Label" type="Label" parent="MarginContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(0.20943019, 0.2406185, 0.3803503, 1)
+theme_override_font_sizes/font_size = 70
+text = "Game over"
+
+[node name="Button" type="Button" parent="."]
+offset_left = -1464.0
+offset_top = 464.0
+offset_right = -224.0
+offset_bottom = 936.0
