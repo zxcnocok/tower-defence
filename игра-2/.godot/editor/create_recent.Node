@@ -1,6 +1,11 @@
+<<<<<<< HEAD
 AnimatedSprite2D
 CollisionShape2D
 CharacterBody2D
+=======
+TileMapLayer
+TileMap
+>>>>>>> 48b75e84fbfa169b8eea30e807b260db66d61c7a
 Button
 Label
 MarginContainer
