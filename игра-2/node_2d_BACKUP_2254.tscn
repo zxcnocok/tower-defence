@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=4 uid="uid://dp7h161grtpoe"]
+[gd_scene load_steps=70 format=4 uid="uid://bp2bbcc0onuhd"]
 
 [ext_resource type="Texture2D" uid="uid://wb5v0osaqkj" path="res://tilesets/1 Tiles/FieldsTileset.png" id="3_0hol4"]
 [ext_resource type="Texture2D" uid="uid://cqd0kjgqcet88" path="res://Sprite-0001.svg" id="3_epypp"]
@@ -43,6 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://dh3jacsrhvtxc" path="res://tilesets/2 Objects/7 Decor/Tree2.png" id="42_sduiw"]
 [ext_resource type="Texture2D" uid="uid://bql4w3skcsvb2" path="res://tilesets/2 Objects/7 Decor/Log4.png" id="43_ld5wt"]
 [ext_resource type="Texture2D" uid="uid://dmsgkq88s0ldi" path="res://tilesets/2 Objects/7 Decor/Lamp3.png" id="44_wcv2n"]
+[ext_resource type="Texture2D" uid="uid://c1w8qdh4ladcy" path="res://tilesets/2 Objects/7 Decor/Lamp2.png" id="45_b0j31"]
 [ext_resource type="Texture2D" uid="uid://dq3rhffviyk18" path="res://tilesets/2 Objects/8 Camp/4.png" id="46_xgqcr"]
 [ext_resource type="Texture2D" uid="uid://dr5mwbn227jc5" path="res://tilesets/2 Objects/7 Decor/Lamp5.png" id="47_6jj3b"]
 [ext_resource type="Texture2D" uid="uid://dw0ekoucoiwxv" path="res://tilesets/2 Objects/7 Decor/Log2.png" id="48_5mre3"]
@@ -508,11 +509,6 @@ texture = ExtResource("17_d88dk")
 [node name="Node2D" parent="главная сцена" instance=ExtResource("22_t3mf0")]
 position = Vector2(248, 24)
 
-[node name="FieldsTile38" type="Sprite2D" parent="главная сцена"]
-position = Vector2(1267, 284.49997)
-scale = Vector2(0.8125, 20.781248)
-texture = ExtResource("67_t3mf0")
-
 [node name="inmenu" parent="." instance=ExtResource("5_q6r6c")]
 
 [node name="2" type="Sprite2D" parent="."]
@@ -864,20 +860,46 @@ texture = ExtResource("30_2wyoe")
 position = Vector2(696, 285)
 texture = ExtResource("29_1m5r5")
 
+<<<<<<< HEAD
+[node name="Lamp2" type="Sprite2D" parent="."]
+position = Vector2(496, 293)
+texture = ExtResource("45_b0j31")
+
 [node name="Node2D" parent="." instance=ExtResource("67_kejda")]
-position = Vector2(730, 118)
+position = Vector2(731, 118)
 
 [node name="FieldsTile38" type="Sprite2D" parent="."]
-position = Vector2(635, 625.5)
-scale = Vector2(39.1875, 0.78125)
+position = Vector2(648, 624)
+scale = Vector2(40, 1)
 texture = ExtResource("67_t3mf0")
 
 [node name="FieldsTile39" type="Sprite2D" parent="."]
-position = Vector2(12, 290.5)
-scale = Vector2(0.25, 20.156248)
+position = Vector2(12, 288)
+scale = Vector2(0.25, 20)
 texture = ExtResource("67_t3mf0")
 
 [node name="FieldsTile40" type="Sprite2D" parent="."]
-position = Vector2(651.99994, -29.5)
-scale = Vector2(39.749996, 0.15625)
+position = Vector2(652, -28)
+scale = Vector2(39.75, 0.25)
 texture = ExtResource("67_t3mf0")
+
+[node name="FieldsTile41" type="Sprite2D" parent="."]
+position = Vector2(1276, 291.99997)
+scale = Vector2(0.7500015, 19.749998)
+texture = ExtResource("67_t3mf0")
+
+[node name="Node2D2" parent="." instance=ExtResource("4_0hol4")]
+position = Vector2(32, 24)
+=======
+[node name="Log3" type="Sprite2D" parent="."]
+position = Vector2(912, 816)
+texture = ExtResource("48_5mre3")
+
+[node name="Lamp6" type="Sprite2D" parent="."]
+position = Vector2(1000, 808)
+texture = ExtResource("47_6jj3b")
+
+[node name="Box6" type="Sprite2D" parent="."]
+position = Vector2(664, 440)
+texture = ExtResource("54_jinwr")
+>>>>>>> b262d3414e147fe1c73a849917054bc773980fd1

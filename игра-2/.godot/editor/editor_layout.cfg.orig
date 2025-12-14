@@ -9,12 +9,13 @@ dock_filesystem_v_split_offset=0
 dock_filesystem_display_mode=0
 dock_filesystem_file_sort=0
 dock_filesystem_file_list_display_mode=1
-<<<<<<<HEADdock_filesystem_selected_paths=PackedStringArray("res://towers/1 Upgrade/1.png")
-dock_filesystem_uncollapsed_paths=PackedStringArray("Favorites", "res://", "res://towers/", "res://towers/1 Upgrade/", "res://tilesets/", "res://sprite/")
-dock_3="Scene,Import"
-dock_4="FileSystem"
-dock_5="Node,Inspector,History"
-dock_filesystem_selected_paths=PackedStringArray("res://towers/1 Upgrade/1.png")
+<<<<<<< HEAD
+dock_filesystem_selected_paths=PackedStringArray("res://towers/2 Idle/2.png")
+dock_filesystem_uncollapsed_paths=PackedStringArray("Favorites", "res://", "res://towers/", "res://towers/2 Idle/", "res://tilesets/", "res://tilesets/3 Animated Objects/", "res://sprite/")
+=======
+dock_filesystem_selected_paths=PackedStringArray("res://")
+dock_filesystem_uncollapsed_paths=PackedStringArray("Favorites", "res://", "res://towers/3 Units/", "res://towers/3 Units/3/", "res://towers/3 Units/2/", "res://towers/3 Units/1/", "res://towers/2 Idle/", "res://towers/1 Upgrade/", "res://tilesets/", "res://tilesets/3 Animated Objects/2 Campfire/", "res://tilesets/2 Objects/", "res://tilesets/2 Objects/8 Camp/", "res://tilesets/2 Objects/7 Decor/", "res://tilesets/2 Objects/6 Flower/", "res://tilesets/2 Objects/5 Grass/", "res://tilesets/2 Objects/4 Stone/", "res://tilesets/2 Objects/3 Pointer/", "res://tilesets/2 Objects/2 Fence/", "res://tilesets/2 Objects/1 Shadow/")
+>>>>>>> b262d3414e147fe1c73a849917054bc773980fd1
 dock_node_current_tab=0
 dock_history_include_scene=true
 dock_history_include_global=true
@@ -26,13 +27,23 @@ dock_hsplit_1=0
 dock_hsplit_2=270
 dock_hsplit_3=-270
 dock_hsplit_4=0
+dock_3="Scene,Import"
+dock_4="FileSystem"
+dock_5="Node,Inspector,History"
 
 [EditorNode]
 
-open_scenes=PackedStringArray("res://menu.tscn", "res://node_2d.tscn", "res://node_22d.tscn", "res://gameover.tscn", "res://смерть моба.tscn", "res://dwalk2.tscn", "res://swalk.tscn", "res://up1.tscn", "res://up2.tscn", "res://up3.tscn", "res://up4.tscn", "res://up5.tscn")
-current_scene="res://up5.tscn"
+<<<<<<< HEAD
+open_scenes=PackedStringArray("res://menu.tscn", "res://node_2d.tscn", "res://node_22d.tscn", "res://gameover.tscn", "res://смерть моба.tscn", "res://dwalk2.tscn", "res://swalk.tscn", "res://up1.tscn", "res://up2.tscn", "res://up3.tscn", "res://up4.tscn", "res://up5.tscn", "res://up6.tscn", "res://up7.tscn", "res://flag.tscn", "res://flag2.tscn", "res://fire.tscn", "res://inmenu.tscn")
+current_scene=""
 center_split_offset=0
+selected_default_debugger_tab_idx=1
+=======
+open_scenes=PackedStringArray("res://menu.tscn", "res://node_2d.tscn", "res://node_22d.tscn", "res://gameover.tscn")
+current_scene="res://node_2d.tscn"
+center_split_offset=-258
 selected_default_debugger_tab_idx=0
+>>>>>>> b262d3414e147fe1c73a849917054bc773980fd1
 selected_main_editor_idx=0
 
 [EditorWindow]
@@ -43,8 +54,8 @@ position=Vector2i(0, 29)
 
 [ScriptEditor]
 
-open_scripts=["res://character_body_2d.gd", "res://inmenu.gd", "res://menu.gd"]
-selected_script="res://character_body_2d.gd"
+open_scripts=["res://path_follow_2d.gd", "res://path_follow_2d_2.gd"]
+selected_script="res://path_follow_2d.gd"
 open_help=[]
 script_split_offset=200
 list_split_offset=0
@@ -52,7 +63,7 @@ zoom_factor=1.0
 
 [GameView]
 
-floating_window_rect=Rect2i(164, 0, 1592, 1047)
+floating_window_rect=Rect2i(314, 0, 1292, 1047)
 floating_window_screen=0
 
 [ShaderEditor]
