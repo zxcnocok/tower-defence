@@ -859,3 +859,15 @@ texture = ExtResource("30_2wyoe")
 [node name="52" type="Sprite2D" parent="."]
 position = Vector2(704, 616)
 texture = ExtResource("29_1m5r5")
+
+[node name="Log3" type="Sprite2D" parent="."]
+position = Vector2(912, 816)
+texture = ExtResource("48_5mre3")
+
+[node name="Lamp6" type="Sprite2D" parent="."]
+position = Vector2(1000, 808)
+texture = ExtResource("47_6jj3b")
+
+[node name="Box6" type="Sprite2D" parent="."]
+position = Vector2(664, 440)
+texture = ExtResource("54_jinwr")
