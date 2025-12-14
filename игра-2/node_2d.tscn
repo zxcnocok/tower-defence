@@ -881,3 +881,6 @@ texture = ExtResource("67_t3mf0")
 position = Vector2(651.99994, -29.5)
 scale = Vector2(39.749996, 0.15625)
 texture = ExtResource("67_t3mf0")
+
+[node name="Node2D2" parent="." instance=ExtResource("4_0hol4")]
+position = Vector2(0, 16)
