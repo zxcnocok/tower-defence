@@ -1,11 +1,11 @@
 [gd_scene load_steps=4 format=3 uid="uid://bx2icsusqn6oo"]
 
-[ext_resource type="PackedScene" uid="uid://x2dmkttg1r34" path="res://slime.tscn" id="2_1bmu6"]
-[ext_resource type="Script" uid="uid://b2s6bj5f8ld4y" path="res://wave_spawner.gd" id="6_rwauq"]
+[ext_resource type="Script" uid="uid://b2s6bj5f8ld4y" path="res://wave_spawner.gd" id="1_p4axq"]
+[ext_resource type="PackedScene" uid="uid://x2dmkttg1r34" path="res://slime.tscn" id="2_58vaa"]
 
 [sub_resource type="Curve2D" id="Curve2D_cruuc"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 54, 1, 0, 0, 0, 0, 435, 0, 0, 0, 0, 0, 445, 589, 0, 0, 0, 0, 1219, 589, 0, 0, 0, 0, 1220, 211, 0, 0, 0, 0, 983, 208)
+"points": PackedVector2Array(0, 0, 0, 0, 54, 1, 0, 0, 0, 0, 392, 0, 0, 0, 0, 0, 392, 544, 0, 0, 0, 0, 1216, 544, 0, 0, 0, 0, 1224, 192, 0, 0, 0, 0, 984, 192)
 }
 point_count = 6
 
@@ -16,11 +16,11 @@ curve = SubResource("Curve2D_cruuc")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2(54, 1)
-rotation = -0.0026246659
+rotation = -0.0029585713
 loop = false
 
 [node name="WaveSpawner" type="Node" parent="."]
-script = ExtResource("6_rwauq")
-mob_scene = ExtResource("2_1bmu6")
+script = ExtResource("1_p4axq")
+mob_scene = ExtResource("2_58vaa")
 
 [node name="Timer" type="Timer" parent="WaveSpawner"]

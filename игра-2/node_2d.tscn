@@ -66,7 +66,7 @@
 [ext_resource type="Texture2D" uid="uid://bwd7wonyf7oxr" path="res://tilesets/2 Objects/4 Stone/5.png" id="66_fibx4"]
 [ext_resource type="PackedScene" uid="uid://bj1nxpalebodr" path="res://fire.tscn" id="67_kejda"]
 [ext_resource type="Texture2D" uid="uid://cxgrh4cb0lb8v" path="res://tilesets/1 Tiles/FieldsTile_38.png" id="67_t3mf0"]
-[ext_resource type="PackedScene" uid="uid://bx2icsusqn6oo" path="res://swalk.tscn" id="67_uqk8q"]
+[ext_resource type="PackedScene" uid="uid://bx2icsusqn6oo" path="res://modspawn.tscn" id="67_uqk8q"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q6r6c"]
 texture = ExtResource("3_0hol4")
@@ -883,4 +883,5 @@ position = Vector2(651.99994, -29.5)
 scale = Vector2(39.749996, 0.15625)
 texture = ExtResource("67_t3mf0")
 
-[node name="Node2D2" parent="." instance=ExtResource("67_uqk8q")]
+[node name="Node2D3" parent="." instance=ExtResource("67_uqk8q")]
+position = Vector2(7, 11)

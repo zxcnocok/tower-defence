@@ -11,13 +11,12 @@ var is_spawning: bool = false
 func _ready() -> void:
 	print("✅ WaveSpawner запущен")
 	
-	# Ждём 2 секунды
 	await get_tree().create_timer(2.0).timeout
 	start_wave()
 
 func start_wave() -> void:
 	if is_spawning:
-		return  # Уже спавним!
+		return 
 	
 	is_spawning = true
 	print("🌊 Волна ", current_wave, " началась")
@@ -27,21 +26,21 @@ func start_wave() -> void:
 
 func spawn_mob_sequence() -> void:
 	if mobs_spawned >= mobs_per_wave:
-		# Волна закончена
+		
 		is_spawning = false
 		current_wave += 1
 		print("✅ Волна завершена")
 		
-		# Ждём 5 сек перед следующей волной
+		
 		await get_tree().create_timer(5.0).timeout
 		start_wave()
 		return
 	
-	# Спавним одного моба
+
 	spawn_single_mob()
 	mobs_spawned += 1
 	
-	# Ждём перед следующим мобом
+
 	await get_tree().create_timer(spawn_interval).timeout
 	spawn_mob_sequence()
 
@@ -50,7 +49,7 @@ func spawn_single_mob() -> void:
 		print("❌ Сцена моба не выбрана!")
 		return
 	
-	# Находим Path2D
+
 	var path = get_parent().get_node("Path2D")
 	if not path:
 		print("❌ Path2D не найден!")
