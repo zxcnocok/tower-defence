@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dv0ufw2t6rsg6"]
+[gd_scene load_steps=10 format=3 uid="uid://dv0ufw2t6rsg6"]
 
 [ext_resource type="Texture2D" uid="uid://bj6ekia8uqmq3" path="res://towers/2 Idle/2.png" id="1_2jock"]
 
@@ -44,6 +44,13 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_2jock"]
 radius = 167.24234
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2jock"]
+bg_color = Color(1, 0, 0, 0.2627451)
+corner_radius_top_left = 460
+corner_radius_top_right = 460
+corner_radius_bottom_right = 460
+corner_radius_bottom_left = 460
+
 [node name="idle2" type="Node2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -69,3 +76,10 @@ metadata/_edit_lock_ = true
 [node name="ArrowContainer" type="Node" parent="."]
 
 [node name="AttackTimer" type="Timer" parent="."]
+
+[node name="Area" type="Panel" parent="."]
+offset_left = -167.0
+offset_top = -137.0
+offset_right = 166.0
+offset_bottom = 200.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_2jock")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=4 uid="uid://dp7h161grtpoe"]
+[gd_scene load_steps=72 format=4 uid="uid://dp7h161grtpoe"]
 
 [ext_resource type="Texture2D" uid="uid://wb5v0osaqkj" path="res://tilesets/1 Tiles/FieldsTileset.png" id="3_0hol4"]
 [ext_resource type="PackedScene" uid="uid://b7hybobhc7ewx" path="res://node_22d.tscn" id="4_0hol4"]
@@ -68,6 +68,7 @@
 [ext_resource type="PackedScene" uid="uid://bj1nxpalebodr" path="res://fire.tscn" id="67_kejda"]
 [ext_resource type="Texture2D" uid="uid://cxgrh4cb0lb8v" path="res://tilesets/1 Tiles/FieldsTile_38.png" id="67_t3mf0"]
 [ext_resource type="PackedScene" uid="uid://bongsp6an7orj" path="res://modspawn.tscn" id="67_uqk8q"]
+[ext_resource type="PackedScene" uid="uid://cite2qs3sauci" path="res://ui.tscn" id="69_wu3dr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q6r6c"]
 texture = ExtResource("3_0hol4")
@@ -433,6 +434,8 @@ texture = ExtResource("19_r3ryn")
 visibility_layer = 512
 position = Vector2(48, 176)
 texture = ExtResource("17_d88dk")
+
+[node name="UI" parent="." instance=ExtResource("69_wu3dr")]
 
 [node name="inmenu" parent="." instance=ExtResource("5_q6r6c")]
 
@@ -820,9 +823,6 @@ texture_filter = 3
 position = Vector2(224, 141)
 texture = ExtResource("4_akb8o")
 
-[node name="idle2" parent="Node" instance=ExtResource("64_1vm84")]
-position = Vector2(223, 102)
-
 [node name="PlaceForTower1" type="Sprite2D" parent="Node"]
 visibility_layer = 512
 texture_filter = 3
@@ -923,3 +923,8 @@ texture = ExtResource("14_nsnm2")
 visibility_layer = 512
 position = Vector2(1128, 405)
 texture = ExtResource("15_f8kvm")
+
+[node name="Towers" type="Node" parent="."]
+
+[node name="idle2" parent="Towers" instance=ExtResource("64_1vm84")]
+position = Vector2(223, 102)

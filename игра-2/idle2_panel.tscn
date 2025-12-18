@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://sgtgrsuh27it"]
+
+[ext_resource type="Script" uid="uid://cphwpo8rpa2ha" path="res://idle_2_panel.gd" id="1_pq2qg"]
+[ext_resource type="Texture2D" uid="uid://bj6ekia8uqmq3" path="res://towers/2 Idle/2.png" id="1_utojp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjodi"]
+atlas = ExtResource("1_utojp")
+region = Rect2(0, 0, 70, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4fp4"]
+atlas = ExtResource("1_utojp")
+region = Rect2(70, 0, 70, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2nb6s"]
+atlas = ExtResource("1_utojp")
+region = Rect2(140, 0, 70, 130)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gex55"]
+atlas = ExtResource("1_utojp")
+region = Rect2(210, 0, 70, 130)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pq2qg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjodi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4fp4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2nb6s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gex55")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Idle2Panel" type="Panel"]
+offset_right = 80.0
+offset_bottom = 80.0
+script = ExtResource("1_pq2qg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(40, 8)
+sprite_frames = SubResource("SpriteFrames_pq2qg")
+autoplay = "default"
+
+[connection signal="gui_input" from="." to="." method="_on_gui_input"]
