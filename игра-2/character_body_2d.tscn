@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://di3dtb2cgbrj7"]
 
-[ext_resource type="Texture2D" uid="uid://bt2a7hph1wkpn" path="res://Sprite-0005.svg" id="1_f50pn"]
+[ext_resource type="Texture2D" uid="uid://bu22g68gkf5n4" path="res://Sprite-0005.svg" id="1_f50pn"]
 [ext_resource type="Script" uid="uid://x6ugte54v4xg" path="res://character_body_2d.gd" id="1_ij6vw"]
 
 [sub_resource type="Curve2D" id="Curve2D_ij6vw"]
