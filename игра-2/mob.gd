@@ -11,10 +11,13 @@ var health_growth_per_wave := 20.0
 var reward_growth_per_wave := 2
 
 @onready var path_follow = get_parent() as PathFollow2D
-@onready var sprite = $AnimatedSprite2D  # Переименовал anim_sprite в sprite для соответствия
+@onready var sprite = $AnimatedSprite2D
+@onready var health_bar = $healthbar  # Добавляем ссылку на HealthBar
+@onready var health_bar_container = $healthbar/healthcontainer  # Контейнер прогресс-бара
+@onready var health_bar_fill = $healthbar/healthcontainer/healthfill  # Заполнение HP
 
 var current_health: float
-var last_position: Vector2  # Добавил объявление переменной
+var last_position: Vector2
 
 func _ready() -> void:
 	# Получаем номер волны из GameManager (если есть)
@@ -26,9 +29,43 @@ func _ready() -> void:
 	current_health = max_health
 	last_position = global_position
 	
+	# Инициализируем HP-бар
+	initialize_health_bar()
+	
 	# Начинаем с анимации покоя
 	if sprite:
 		sprite.play("idle")
+
+# Инициализация HP-бара
+func initialize_health_bar() -> void:
+	if health_bar and health_bar_fill:
+		# Скрываем HP-бар если здоровье полное
+		health_bar.visible = false
+		
+		# Настраиваем размер прогресс-бара
+		health_bar_fill.size.x = 10  # Ширина полоски (можно настроить)
+		
+		# Обновляем отображение здоровья
+		update_health_bar()
+
+# Обновление HP-бара
+func update_health_bar() -> void:
+	if health_bar and health_bar_fill:
+		var health_percentage = current_health / max_health
+		
+		# Показываем HP-бар только если здоровье не полное
+		health_bar.visible = health_percentage < 1.0
+		
+		# Обновляем размер заполнения
+		health_bar_fill.size.x = 10 * health_percentage
+		
+		# Меняем цвет в зависимости от здоровья
+		if health_percentage > 0.7:
+			health_bar_fill.color = Color.GREEN
+		elif health_percentage > 0.3:
+			health_bar_fill.color = Color.YELLOW
+		else:
+			health_bar_fill.color = Color.RED
 
 # Получаем номер волны из GameManager
 func get_wave_number_from_manager():
@@ -103,6 +140,9 @@ func take_damage(damage: float) -> void:
 	current_health -= damage
 	
 	print("Моб получил урон: ", damage, " (Осталось HP: ", current_health, ")")
+	
+	# Обновляем HP-бар
+	update_health_bar()
 	
 	if current_health <= 0:
 		die()

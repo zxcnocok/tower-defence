@@ -203,7 +203,7 @@ animations = [{
 script = ExtResource("1_jayke")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-8, -8)
+position = Vector2(0, -8)
 shape = SubResource("CircleShape2D_jrxk1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
@@ -216,3 +216,21 @@ autoplay = "swalk"
 frame = 2
 frame_progress = 0.82305974
 speed_scale = -1.0
+
+[node name="healthbar" type="Node2D" parent="."]
+
+[node name="healhcontainer" type="ColorRect" parent="healthbar"]
+offset_left = -13.0
+offset_top = -22.0
+offset_right = 3.0
+offset_bottom = -19.0
+color = Color(0.90588236, 0.20392157, 0.30588236, 1)
+
+[node name="healthfill" type="ColorRect" parent="healthbar/healhcontainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.81876075, 0.2534577, 0.3253326, 1)
