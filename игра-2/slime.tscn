@@ -208,8 +208,9 @@ shape = SubResource("CircleShape2D_jrxk1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
 texture_filter = 1
+position = Vector2(0.0989231, 0.09891965)
 rotation = 1.5705531
-scale = Vector2(1, 0.9992595)
+scale = Vector2(0.9958773, 1.0033802)
 sprite_frames = SubResource("SpriteFrames_alucd")
 animation = &"swalk"
 autoplay = "swalk"
