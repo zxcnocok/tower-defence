@@ -5,30 +5,30 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_1bmu6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8f0gl"]
-atlas = ExtResource("4_5b0gg")
+atlas = ExtResource("1_rog7o")
 region = Rect2(0, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lkkw2"]
-atlas = ExtResource("4_5b0gg")
+atlas = ExtResource("1_rog7o")
 region = Rect2(48, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_cruuc"]
-atlas = ExtResource("4_5b0gg")
+atlas = ExtResource("1_rog7o")
 region = Rect2(96, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rwauq"]
-atlas = ExtResource("4_5b0gg")
+atlas = ExtResource("1_rog7o")
 region = Rect2(144, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1s3jg"]
-atlas = ExtResource("4_5b0gg")
+atlas = ExtResource("1_rog7o")
 region = Rect2(192, 0, 48, 48)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5qcgy"]
 atlas = ExtResource("1_rog7o")
 region = Rect2(240, 0, 48, 48)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_alucd"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_cjuka"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -54,14 +54,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="CharacterBody2D" type="CharacterBody2D"]
-script = ExtResource("1_jayke")
+[node name="Node2D" type="Node2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-8, -8)
-shape = SubResource("CircleShape2D_jrxk1")
+shape = SubResource("CircleShape2D_1bmu6")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CollisionShape2D"]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 sprite_frames = SubResource("SpriteFrames_cjuka")
 autoplay = "default"

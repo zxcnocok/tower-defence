@@ -23,7 +23,7 @@ curve = SubResource("Curve2D_8l8af")
 position = Vector2(16, 0)
 script = ExtResource("3_8l8af")
 
-[node name="slime" type="CharacterBody2D" parent="Path2D/PathFollow2D2"]
+[node name="CharacterBody2D" type="CharacterBody2D" parent="Path2D/PathFollow2D2"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Path2D/PathFollow2D2"]
 rotation = -6.2831855

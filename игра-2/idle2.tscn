@@ -1,7 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://dv0ufw2t6rsg6"]
+[gd_scene load_steps=8 format=3 uid="uid://dv0ufw2t6rsg6"]
 
 [ext_resource type="Texture2D" uid="uid://bj6ekia8uqmq3" path="res://towers/2 Idle/2.png" id="1_2jock"]
-[ext_resource type="Script" uid="uid://c0ia6lhyiktnf" path="res://idle_2.gd" id="1_10ldt"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_10ldt"]
 radius = 32.01562
@@ -42,11 +41,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_gjodi"]
-radius = 162.63457
-
-[node name="Iddle2" type="Node2D"]
-script = ExtResource("1_10ldt")
+[node name="Node2D" type="Node2D"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 33)
@@ -56,17 +51,3 @@ shape = SubResource("CircleShape2D_10ldt")
 sprite_frames = SubResource("SpriteFrames_3vdc4")
 autoplay = "default"
 frame_progress = 0.2879517
-
-[node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(0, -4)
-
-[node name="Tower" type="Area2D" parent="."]
-position = Vector2(0, 33)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Tower"]
-shape = SubResource("CircleShape2D_gjodi")
-
-[node name="ArrowContainer" type="Node" parent="."]
-
-[connection signal="body_entered" from="Tower" to="." method="_on_tower_body_entered"]
-[connection signal="body_exited" from="Tower" to="." method="_on_tower_body_exited"]
