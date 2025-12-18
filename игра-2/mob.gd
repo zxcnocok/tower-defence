@@ -1,25 +1,55 @@
 extends CharacterBody2D
 
+# Характеристики
+var max_health := 100.0
+var speed := 50.0
+var reward := 10
 
-@export var max_health := 100.0
-@export var speed := 50.0
-@export var speed_increase_per_wave := 5.0 
-@export var speed_multiplier := 1.05    
-@export var reward := 10
+# Параметры роста
+var wave_number := 1
+var health_growth_per_wave := 20.0
+var reward_growth_per_wave := 2
 
 @onready var path_follow = get_parent() as PathFollow2D
-@onready var anim_sprite = $AnimatedSprite2D  # Убедись, что у моба есть этот узел
+@onready var sprite = $AnimatedSprite2D  # Переименовал anim_sprite в sprite для соответствия
 
 var current_health: float
-var last_position: Vector2
+var last_position: Vector2  # Добавил объявление переменной
 
 func _ready() -> void:
+	# Получаем номер волны из GameManager (если есть)
+	get_wave_number_from_manager()
+	
+	# Рассчитываем характеристики для текущей волны
+	calculate_stats_for_wave()
+	
 	current_health = max_health
 	last_position = global_position
 	
 	# Начинаем с анимации покоя
-	if anim_sprite:
-		anim_sprite.play("idle")
+	if sprite:
+		sprite.play("idle")
+
+# Получаем номер волны из GameManager
+func get_wave_number_from_manager():
+	if has_node("/root/GameManager"):
+		var gm = get_node("/root/GameManager")
+		if gm.has_method("get_current_wave"):
+			wave_number = gm.get_current_wave()
+		elif gm.has_property("current_wave"):
+			wave_number = gm.current_wave
+	print("Моб создан для волны: ", wave_number)
+
+# Функция расчета характеристик
+func calculate_stats_for_wave():
+	max_health = 100.0 + (wave_number - 1) * health_growth_per_wave
+	reward = 10 + (wave_number - 1) * reward_growth_per_wave
+	speed = 50.0  # Постоянная
+	
+	print("Характеристики моба:")
+	print("  Здоровье: ", max_health)
+	print("  Награда: ", reward)
+	print("  Скорость: ", speed)
 
 func _physics_process(delta: float) -> void:
 	if not path_follow:
@@ -36,7 +66,7 @@ func _physics_process(delta: float) -> void:
 	var move_dir = global_position - old_position
 	
 	# 4. Меняем анимацию по направлению
-	if anim_sprite:
+	if sprite:
 		update_animation(move_dir)
 	
 	# 5. Проверяем конец пути
@@ -44,42 +74,49 @@ func _physics_process(delta: float) -> void:
 		reach_end()
 
 func update_animation(movement: Vector2) -> void:
+	# Если спрайт не найден - выходим
+	if not sprite:
+		return
+	
 	# Если почти не двигаемся - показываем покой
 	if movement.length() < 0.1:
-		anim_sprite.play("idle")
+		sprite.play("idle")
 		return
 	
 	# Смотрим, движение больше по горизонтали или вертикали
 	if abs(movement.x) > abs(movement.y):
 		# Движение вправо-влево
 		if movement.x > 0:
-			anim_sprite.play("dwalk")
-			anim_sprite.flip_h = false
+			sprite.play("dwalk")
+			sprite.flip_h = false
 		else:
-			anim_sprite.play("dwalk")
-			anim_sprite.flip_h = true
+			sprite.play("dwalk")
+			sprite.flip_h = true
 	else:
 		# Движение вверх-вниз
 		if movement.y > 0:
-			anim_sprite.play("uwalk")
+			sprite.play("uwalk")
 		else:
-			anim_sprite.play("swalk")
+			sprite.play("swalk")
 
 func take_damage(damage: float) -> void:
 	current_health -= damage
+	
+	print("Моб получил урон: ", damage, " (Осталось HP: ", current_health, ")")
 	
 	if current_health <= 0:
 		die()
 
 func die() -> void:
 	# 1. Воспроизводим анимацию смерти
-	if anim_sprite and anim_sprite.has_animation("death"):
-		anim_sprite.play("death")
-		await anim_sprite.animation_finished  # Ждем окончания анимации
+	if sprite and sprite.has_animation("death"):
+		sprite.play("death")
+		await sprite.animation_finished  # Ждем окончания анимации
 	
-	# 2. Даем награду
+	# 2. Даем награду (уже с учетом волны)
 	if has_node("/root/GameManager"):
 		get_node("/root/GameManager").add_gold(reward)
+		print("Награда за моба: ", reward, " золота")
 	
 	# 3. Удаляем моба
 	queue_free()
@@ -90,3 +127,4 @@ func reach_end() -> void:
 		get_node("/root/GameManager").take_damage(1)
 	
 	queue_free()
+	
