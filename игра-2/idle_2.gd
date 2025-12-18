@@ -8,7 +8,7 @@ var currTargets = []
 var curr
 
 
-func _process(delta):
+func _process(_delta):
 	if is_instance_valid(curr):
 		self.look_at(curr.global_position)
 	else:
@@ -17,18 +17,18 @@ func _process(delta):
 
 
 func _on_tower_body_entered(body):
-	if "PathFollow2D2" in body.name:
+	if "CharacterBody2D" in body.name:
 		var tempArray = []
-		currTargets = get_node("PathFollow2D2").get_overlapping_bod8ies()
+		currTargets = get_node("Tower").get_overlapping_bodies()
 		print(currTargets)
 	
 		for i in currTargets:
-			if "Slime" in i.name:
+			if "CharacterBody2D" in i.name:
 				tempArray.append(i)
 				
 		var currTarget = null
 		
-		for i in tempArray:
+		for i in tempArray: 
 			if currTarget == null:
 				currTarget = i.get_node("../")
 			else:
