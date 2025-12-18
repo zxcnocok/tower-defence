@@ -6,11 +6,11 @@ var pathName = ""
 var arrowDamage
 
 func _physics_process(_delta):
-	var pathSpawnerNode = get_tree().get_root().get_node("main/Node2D/Path2D")
+	var pathSpawnerNode = get_tree().get_root().get_node("Node2D2/Node2D2")
 	
 	for i in pathSpawnerNode.get_child_count():
 		if pathSpawnerNode.get_child(1).name == pathName:
-			target = pathSpawnerNode.get_child(1).het_child(0).get_child(0).global_position
+			target = pathSpawnerNode.get_child(1).get_child(0).get_child(0).get_child(0).global_position
 			
 	
 	velocity = global_position.direction_to(target) *Speed
