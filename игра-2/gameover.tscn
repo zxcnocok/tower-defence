@@ -1,30 +1,47 @@
-[gd_scene load_steps=2 format=3 uid="uid://c3rub6dfkjdqx"]
+[gd_scene load_steps=3 format=3 uid="uid://c3rub6dfkjdqx"]
 
 [ext_resource type="Texture2D" uid="uid://bwk17hkwyarfg" path="res://sprite/Sprite-0004.svg" id="1_4nh4k"]
+[ext_resource type="Script" uid="uid://bp8q0atatn6jy" path="res://gameover.gd" id="1_tpdqf"]
 
-[node name="Gameover" type="Node2D"]
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_tpdqf")
 
 [node name="Sprite0004" type="Sprite2D" parent="."]
-position = Vector2(792, 496)
-scale = Vector2(24.75, 15.75)
+position = Vector2(640.00006, 335.99997)
+scale = Vector2(20, 10.5)
 texture = ExtResource("1_4nh4k")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-offset_right = 1584.0
-offset_bottom = 1000.0
-size_flags_horizontal = 0
-metadata/_edit_lock_ = true
+offset_right = 1280.0
+offset_bottom = 672.0
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 200
 
-[node name="Label" type="Label" parent="MarginContainer"]
-texture_filter = 1
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-size_flags_horizontal = 4
-theme_override_colors/font_color = Color(0.20943019, 0.2406185, 0.3803503, 1)
-theme_override_font_sizes/font_size = 70
-text = "Game over"
+size_flags_vertical = 4
 
-[node name="Button" type="Button" parent="."]
-offset_left = 368.0
-offset_top = 664.0
-offset_right = 1304.0
-offset_bottom = 800.0
+[node name="restart" type="Button" parent="MarginContainer/VBoxContainer"]
+texture_filter = 3
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Начать заново"
+
+[node name="inmenu" type="Button" parent="MarginContainer/VBoxContainer"]
+texture_filter = 3
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Меню"
+
+[node name="exit" type="Button" parent="MarginContainer/VBoxContainer"]
+texture_filter = 3
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "Выход"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/restart" to="." method="_on_restart_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/inmenu" to="." method="_on_inmenu_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/exit" to="." method="_on_exit_pressed"]

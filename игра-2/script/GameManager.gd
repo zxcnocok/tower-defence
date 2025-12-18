@@ -29,13 +29,12 @@ func get_current_wave() -> int:
 
 func start_next_wave():
 	current_wave += 1
-	print("🌊 Начинается волна: ", current_wave)  # ИСПРАВЛЕНО: убрана лишняя кавычка
+	print("🌊 Начинается волна: ", current_wave)
 
 # === Методы для управления ресурсами игрока ===
 func add_gold(amount: int):
 	player_gold += amount
 	print("💰 +", amount, " золота. Всего: ", player_gold)
-	# Здесь можно отправить сигнал для обновления интерфейса
 
 func take_damage(damage: int):
 	player_health -= damage
@@ -47,7 +46,6 @@ func take_damage(damage: int):
 	# Проверяем конец игры
 	if player_health <= 0:
 		game_over()
-	# Здесь можно отправить сигнал для обновления интерфейса
 
 func game_over():
 	print("💀 ИГРА ОКОНЧЕНА! Вы достигли волны ", current_wave)
@@ -55,26 +53,35 @@ func game_over():
 	# Отправляем сигнал
 	game_over_reached.emit()
 	
-	# Ждём немного перед переходом
-	await get_tree().create_timer(1.0).timeout
-	
-	# Переход на сцену Game Over
+	# Сразу переходим на сцену Game Over
 	switch_to_game_over_scene()
 
 func switch_to_game_over_scene():
 	if game_over_scene:
-		# 1. Останавливаем игру
+		# 1. Паузим игру
 		get_tree().paused = true
 		
 		# 2. Создаём экземпляр сцены
 		var game_over_instance = game_over_scene.instantiate()
 		
-		# 3. Добавляем на самый верх
+		# 3. Устанавливаем режим обработки для самой сцены
+		game_over_instance.process_mode = Node.PROCESS_MODE_ALWAYS
+		
+		# 4. Добавляем на самый верх
 		get_tree().root.add_child(game_over_instance)
 		
-		# 4. Делаем её активной
-		get_tree().current_scene = game_over_instance
+		# 5. Показываем курсор мыши
+		Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		
 		print("Переход на сцену Game Over выполнен")
 	else:
 		print("ОШИБКА: Сцена Game Over не загружена!")
+
+# НОВАЯ ФУНКЦИЯ: Сброс состояния игры
+func reset_game_state():
+	print("=== СБРОС СОСТОЯНИЯ ИГРЫ ===")
+	current_wave = 1
+	player_gold = 100
+	player_health = 1
+	print("Состояние сброшено: Волна=", current_wave, 
+		  ", Золото=", player_gold, ", Здоровье=", player_health)
