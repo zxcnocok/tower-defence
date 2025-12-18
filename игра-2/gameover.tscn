@@ -5,14 +5,13 @@
 [node name="Gameover" type="Node2D"]
 
 [node name="Sprite0004" type="Sprite2D" parent="."]
-position = Vector2(640, 336)
-scale = Vector2(20, 10.625)
+position = Vector2(792, 496)
+scale = Vector2(24.75, 15.75)
 texture = ExtResource("1_4nh4k")
-metadata/_edit_lock_ = true
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
-offset_right = 1280.0
-offset_bottom = 672.0
+offset_right = 1584.0
+offset_bottom = 1000.0
 size_flags_horizontal = 0
 metadata/_edit_lock_ = true
 
@@ -24,17 +23,8 @@ theme_override_colors/font_color = Color(0.20943019, 0.2406185, 0.3803503, 1)
 theme_override_font_sizes/font_size = 70
 text = "Game over"
 
-[node name="restart" type="Button" parent="."]
-texture_filter = 3
-offset_left = 448.0
-offset_top = 432.0
-offset_right = 832.0
-offset_bottom = 496.0
-theme_override_font_sizes/font_size = 32
-text = "Начать заново "
-
-[node name="inmenu" type="Button" parent="."]
-offset_left = 504.0
-offset_top = 512.0
-offset_right = 752.0
-offset_bottom = 520.0
+[node name="Button" type="Button" parent="."]
+offset_left = 368.0
+offset_top = 664.0
+offset_right = 1304.0
+offset_bottom = 800.0
