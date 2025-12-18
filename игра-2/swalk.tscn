@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bx2icsusqn6oo"]
+[gd_scene load_steps=4 format=3 uid="uid://dy2r5o7fy1ko3"]
 
 [ext_resource type="PackedScene" uid="uid://x2dmkttg1r34" path="res://slime.tscn" id="2_1bmu6"]
 [ext_resource type="Script" uid="uid://b2s6bj5f8ld4y" path="res://wave_spawner.gd" id="6_rwauq"]
