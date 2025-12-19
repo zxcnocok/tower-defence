@@ -339,6 +339,7 @@ texture_repeat = 2
 position = Vector2(-8, 32)
 
 [node name="главная сцена" parent="." instance=ExtResource("4_0hol4")]
+texture_filter = 3
 position = Vector2(8, 21)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="главная сцена"]
@@ -646,6 +647,7 @@ position = Vector2(872, 181)
 texture = ExtResource("41_r8aua")
 
 [node name="Tree13" type="Sprite2D" parent="Node"]
+texture_filter = 3
 position = Vector2(896, 293)
 texture = ExtResource("41_r8aua")
 
@@ -662,10 +664,12 @@ position = Vector2(896, 413)
 texture = ExtResource("42_sduiw")
 
 [node name="Tree17" type="Sprite2D" parent="Node"]
+texture_filter = 3
 position = Vector2(776, 293)
 texture = ExtResource("42_sduiw")
 
 [node name="Tree18" type="Sprite2D" parent="Node"]
+texture_filter = 3
 position = Vector2(664, 181)
 texture = ExtResource("42_sduiw")
 
