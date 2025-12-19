@@ -338,6 +338,10 @@ texture_filter = 5
 texture_repeat = 2
 position = Vector2(-8, 32)
 
+[node name="inmenu" parent="." instance=ExtResource("5_q6r6c")]
+
+[node name="UI" parent="." instance=ExtResource("69_wu3dr")]
+
 [node name="главная сцена" parent="." instance=ExtResource("4_0hol4")]
 texture_filter = 3
 position = Vector2(8, 21)
@@ -436,16 +440,12 @@ visibility_layer = 512
 position = Vector2(48, 176)
 texture = ExtResource("17_d88dk")
 
-[node name="UI" parent="." instance=ExtResource("69_wu3dr")]
-
-[node name="inmenu" parent="." instance=ExtResource("5_q6r6c")]
-
-[node name="Node2D" parent="." instance=ExtResource("67_kejda")]
+[node name="Campfire" parent="." instance=ExtResource("67_kejda")]
 position = Vector2(730, 118)
 
 [node name="Node2D2" parent="." instance=ExtResource("67_uqk8q")]
 
-[node name="CharacterBody2D" parent="Node2D2" instance=ExtResource("12_rqtf5")]
+[node name="Slime" parent="Node2D2" instance=ExtResource("12_rqtf5")]
 script = null
 
 [node name="Node" type="Node" parent="."]
@@ -929,7 +929,7 @@ visibility_layer = 512
 position = Vector2(1128, 405)
 texture = ExtResource("15_f8kvm")
 
-[node name="Towers" type="Node" parent="."]
+[node name="idle2" parent="." instance=ExtResource("64_1vm84")]
+position = Vector2(303, 131)
 
-[node name="idle2" parent="Towers" instance=ExtResource("64_1vm84")]
-position = Vector2(213, 106)
+[node name="Towers" type="Node" parent="."]

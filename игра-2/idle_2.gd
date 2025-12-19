@@ -7,8 +7,7 @@ var pathName
 var currTargets = []
 var curr
 
-func _ready():
-	print("hello")
+
 func _process(_delta):
 	if is_instance_valid(curr):
 		self.look_at(curr.global_position)
@@ -18,13 +17,13 @@ func _process(_delta):
 
 
 func _on_tower_body_entered(body):
-	if "CharacterBody2D" in body.name:
+	if "Slime" in body.name:
 		var tempArray = []
 		currTargets = get_node("Tower").get_overlapping_bodies()
 		print(currTargets)
 	
 		for i in currTargets:
-			if "CharacterBody2D" in i.name:
+			if "Slime" in i.name:
 				tempArray.append(i)
 				
 		var currTarget = null
