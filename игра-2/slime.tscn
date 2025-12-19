@@ -126,7 +126,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_6yvt7")
 }],
 "loop": true,
-"name": &"death",
+"name": &"dia",
 "speed": 10.0
 }, {
 "frames": [{
@@ -211,8 +211,6 @@ texture_filter = 1
 rotation = 1.5705531
 scale = Vector2(1, 0.9992595)
 sprite_frames = SubResource("SpriteFrames_alucd")
-animation = &"swalk"
+animation = &"dia"
 autoplay = "swalk"
-frame = 2
-frame_progress = 0.82305974
 speed_scale = -1.0

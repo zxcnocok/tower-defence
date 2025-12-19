@@ -55,12 +55,10 @@ func spawn_single_mob() -> void:
 		print("❌ Path2D не найден!")
 		return
 	
-	# Создаём НОВЫЙ PathFollow2D для каждого моба
 	var new_path_follow = PathFollow2D.new()
 	new_path_follow.name = "MobPath_%d_%d" % [current_wave, mobs_spawned]
 	path.add_child(new_path_follow)
 	
-	# Создаём моба
 	var mob = mob_scene.instantiate()
 	new_path_follow.add_child(mob)
 	
