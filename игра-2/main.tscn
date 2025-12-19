@@ -67,7 +67,7 @@
 [ext_resource type="Texture2D" uid="uid://bwd7wonyf7oxr" path="res://tilesets/2 Objects/4 Stone/5.png" id="66_fibx4"]
 [ext_resource type="PackedScene" uid="uid://bj1nxpalebodr" path="res://fire.tscn" id="67_kejda"]
 [ext_resource type="Texture2D" uid="uid://cxgrh4cb0lb8v" path="res://tilesets/1 Tiles/FieldsTile_38.png" id="67_t3mf0"]
-[ext_resource type="PackedScene" uid="uid://bongsp6an7orj" path="res://modspawn.tscn" id="67_uqk8q"]
+[ext_resource type="PackedScene" uid="uid://bx2icsusqn6oo" path="res://modspawn.tscn" id="67_uqk8q"]
 [ext_resource type="PackedScene" uid="uid://cite2qs3sauci" path="res://ui.tscn" id="69_wu3dr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q6r6c"]
@@ -445,6 +445,7 @@ position = Vector2(730, 118)
 [node name="Node2D2" parent="." instance=ExtResource("67_uqk8q")]
 
 [node name="CharacterBody2D" parent="Node2D2" instance=ExtResource("12_rqtf5")]
+script = null
 
 [node name="Node" type="Node" parent="."]
 

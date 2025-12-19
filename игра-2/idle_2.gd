@@ -1,59 +1,50 @@
 extends Node2D
 
+
 var arrow = preload("res://arrow.tscn")
 var arrowDamage = 5
-var currTarget = null
-var attackCooldown = 1.0
-var timeSinceLastShot = 0.0
+var pathName
+var currTargets = []
+var curr
 
 func _ready():
-	print("Башня инициализирована")
+	print("hello")
+func _process(_delta):
+	if is_instance_valid(curr):
+		self.look_at(curr.global_position)
+	else:
+		for i in get_node("ArrowContainer").get_child_count():
+			get_node("ArrowContainer").get_child(i).queue_free()
 
-func _process(delta):
-	if currTarget and is_instance_valid(currTarget):
-		timeSinceLastShot += delta
-		look_at(currTarget.global_position)
-		
-		if timeSinceLastShot >= attackCooldown:
-			_shoot_arrow()
-			timeSinceLastShot = 0.0
-	elif $ArrowContainer.get_child_count() > 0:
-		# Очистка старых стрел
-		for arrow in $ArrowContainer.get_children():
-			arrow.queue_free()
 
 func _on_tower_body_entered(body):
-	# Лучшая проверка врага
-	if body.is_in_group("enemies"):
-		print("Враг вошел: ", body.name)
-		if currTarget == null or not is_instance_valid(currTarget):
-			currTarget = body
-
-func _on_tower_body_exited(body):
-	if body == currTarget:
-		print("Враг вышел: ", body.name)
-		currTarget = null
+	if "CharacterBody2D" in body.name:
+		var tempArray = []
+		currTargets = get_node("Tower").get_overlapping_bodies()
+		print(currTargets)
+	
+		for i in currTargets:
+			if "CharacterBody2D" in i.name:
+				tempArray.append(i)
+				
+		var currTarget = null
 		
-		# Ищем нового врага
-		var bodies = $Tower.get_overlapping_bodies()
-		for b in bodies:
-			if b.is_in_group("enemies"):
-				currTarget = b
-				break
-
-func _shoot_arrow():
-	if currTarget and is_instance_valid(currTarget):
-		var newArrow = arrow.instantiate()
+		for i in tempArray: 
+			if currTarget == null:
+				currTarget = i.get_node("../")
+			else:
+				if i.get_parrent().get_progress() > currTarget.get_progress():
+					currTarget = i.get_node("../")
 		
-		# Передаем цель и урон
-		if newArrow.has_method("setup"):
-			newArrow.setup(currTarget, arrowDamage)
-		else:
-			# Для обратной совместимости
-			newArrow.target = currTarget
-			newArrow.damage = arrowDamage
+		curr = currTarget
+		pathName = currTarget.get_parent().name
 		
-		$ArrowContainer.add_child(newArrow)
-		newArrow.global_position = $Aim.global_position
+		var tempArrow  = arrow.instantiate()
+		tempArrow.pathName = pathName
+		tempArrow.arrowDamage = arrowDamage
+		get_node("ArrowContainer").add_child(tempArrow)
+		tempArrow.global_position = $Aim.global_position
 		
-		print("Выстрел по ", currTarget.name)
+		
+func _on_tower_body_exited(_body):
+	currTargets = get_node("Tower").get_overlapping_bodies()

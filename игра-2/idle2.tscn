@@ -43,7 +43,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_2jock"]
-radius = 167.24234
+radius = 197.0406
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2jock"]
 bg_color = Color(1, 0, 0, 0.2627451)
@@ -80,8 +80,8 @@ metadata/_edit_lock_ = true
 [node name="AttackTimer" type="Timer" parent="."]
 
 [node name="Area" type="Panel" parent="."]
-offset_left = -166.0
-offset_top = -134.0
-offset_right = 167.0
-offset_bottom = 203.0
+offset_left = -197.0
+offset_top = -163.0
+offset_right = 194.0
+offset_bottom = 228.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_2jock")
