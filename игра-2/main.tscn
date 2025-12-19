@@ -67,7 +67,7 @@
 [ext_resource type="Texture2D" uid="uid://bwd7wonyf7oxr" path="res://tilesets/2 Objects/4 Stone/5.png" id="66_fibx4"]
 [ext_resource type="PackedScene" uid="uid://bj1nxpalebodr" path="res://fire.tscn" id="67_kejda"]
 [ext_resource type="Texture2D" uid="uid://cxgrh4cb0lb8v" path="res://tilesets/1 Tiles/FieldsTile_38.png" id="67_t3mf0"]
-[ext_resource type="PackedScene" uid="uid://bongsp6an7orj" path="res://modspawn.tscn" id="67_uqk8q"]
+[ext_resource type="PackedScene" uid="uid://bx2icsusqn6oo" path="res://modspawn.tscn" id="67_uqk8q"]
 [ext_resource type="PackedScene" uid="uid://cite2qs3sauci" path="res://ui.tscn" id="69_wu3dr"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q6r6c"]
@@ -339,6 +339,7 @@ texture_repeat = 2
 position = Vector2(-8, 32)
 
 [node name="главная сцена" parent="." instance=ExtResource("4_0hol4")]
+texture_filter = 3
 position = Vector2(8, 21)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="главная сцена"]
@@ -645,6 +646,7 @@ position = Vector2(872, 181)
 texture = ExtResource("41_r8aua")
 
 [node name="Tree13" type="Sprite2D" parent="Node"]
+texture_filter = 3
 position = Vector2(896, 293)
 texture = ExtResource("41_r8aua")
 
@@ -661,10 +663,12 @@ position = Vector2(896, 413)
 texture = ExtResource("42_sduiw")
 
 [node name="Tree17" type="Sprite2D" parent="Node"]
+texture_filter = 3
 position = Vector2(776, 293)
 texture = ExtResource("42_sduiw")
 
 [node name="Tree18" type="Sprite2D" parent="Node"]
+texture_filter = 3
 position = Vector2(664, 181)
 texture = ExtResource("42_sduiw")
 
