@@ -927,4 +927,4 @@ texture = ExtResource("15_f8kvm")
 [node name="Towers" type="Node" parent="."]
 
 [node name="idle2" parent="Towers" instance=ExtResource("64_1vm84")]
-position = Vector2(223, 102)
+position = Vector2(213, 106)

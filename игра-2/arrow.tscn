@@ -1,5 +1,6 @@
-[gd_scene load_steps=31 format=3 uid="uid://dvox2jk6o0qay"]
+[gd_scene load_steps=32 format=3 uid="uid://dvox2jk6o0qay"]
 
+[ext_resource type="Script" uid="uid://blc57svevnwmi" path="res://arrow.gd" id="1_0nokr"]
 [ext_resource type="Texture2D" uid="uid://b8ur0nncno4pv" path="res://towers/3 Units/Arrow/1.png" id="1_v2757"]
 [ext_resource type="Texture2D" uid="uid://bn674pbeapg4k" path="res://towers/3 Units/Arrow/2.png" id="2_0nokr"]
 [ext_resource type="Texture2D" uid="uid://clg8mufidqhl4" path="res://towers/3 Units/Arrow/3.png" id="3_bmhtj"]
@@ -126,6 +127,7 @@ radius = 2.0
 height = 16.0
 
 [node name="Arrow" type="CharacterBody2D"]
+script = ExtResource("1_0nokr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
